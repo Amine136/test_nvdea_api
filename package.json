@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "server": "node server.js",
-    "start": "concurrently \"node server.js\" \"vite\"",
+    "start": "concurrently \"node server.js\" \"vite --host 0.0.0.0\"",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
