@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --nvidia-green: #76b900;
+  --nvidia-bright: #00e676;
+  --nvidia-dark: #051910;
+  --nvidia-glow: rgba(118, 185, 0, 0.35);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #030712;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #76b900;
+}
+
+/* Custom Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(118, 185, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(118, 185, 0, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(118, 185, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.glass-card.active {
+  border-color: #76b900;
+  background: rgba(118, 185, 0, 0.08);
+  box-shadow: 0 0 20px rgba(118, 185, 0, 0.2);
+}
+
+.btn-nvidia {
+  background: linear-gradient(135deg, #76b900 0%, #00c853 100%);
+  color: #000;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(118, 185, 0, 0.3);
+}
+
+.btn-nvidia:hover {
+  background: linear-gradient(135deg, #8ad100 0%, #00e676 100%);
+  box-shadow: 0 6px 25px rgba(118, 185, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-nvidia:active {
+  transform: translateY(0);
+}
